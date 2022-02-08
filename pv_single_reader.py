@@ -43,6 +43,7 @@ view.ResetCamera()
 dataDisplay = Show(dATATYPE, view)
 dataLUT = GetColorTransferFunction(datatype)
 
+view.OrientationAxesVisibility = 0
 # update the view to ensure updated data information
 view.Update()
 
@@ -51,6 +52,10 @@ dataLUT.ApplyPreset('Jet', True)
 
 animationScene.GoToLast()
 dataDisplay.RescaleTransferFunctionToDataRange(False, True)
+
+
+camera = view.GetActiveCamera()
+camera.Zoom(1.25)
 
 #RenderAllViews()
 
